@@ -1,0 +1,29 @@
+#!/usr/bin/python
+import os 
+import re
+import sys
+
+def rename(desiredName): #standard rename, does files in current directory
+        files = os.listdir(".")
+
+        print("Files processed:\n")
+
+        for f in files:
+                extensionType = f[-4:]
+                szn = re.findall(r"([S|s]\d{2}E\d{2})",f)
+                if len(szn) != 0:
+                        finalName = desiredName + " " + szn[0] + extensionType
+                        print(finalName)
+                        os.rename(f, finalName)
+
+try: 
+	if (len(sys.argv) == 3 and sys.argv[1] == '-r'): 
+		desiredName = sys.argv[2]
+		print("shitfuck")
+	else: 
+		desiredName = sys.argv[1]
+		rename(desiredName)
+		
+except: 
+	print("Error take one cli arg Ex: \nrename desiredname") 
+	sys.exit()
