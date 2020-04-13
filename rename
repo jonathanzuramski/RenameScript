@@ -4,8 +4,8 @@ import sys
 
 def main():
     try:
-        desiredName = sys.argv[1]
-        functions.rename(desiredName)
+        desired_name = sys.argv[1]
+        functions.rename(desired_name)
     except:
         print("Please enter a second argument for the name!")
         sys.exit()
