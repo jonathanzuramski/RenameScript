@@ -1,14 +1,15 @@
-#!/usr/bin/python
+#!/usr/bin/python3.8
 import functions
 import sys
 
-def main(): 
-	try: 
-		desiredName = sys.argv[1]
-		functions.rename(desiredName)
-	except:
-		print("Please enter a second argument for the name!")
-		sys.exit()
+def main():
+    try:
+        desiredName = sys.argv[1]
+        functions.rename(desiredName)
+    except:
+        print("Please enter a second argument for the name!")
+        sys.exit()
+
 
 if __name__ == "__main__":
-	main()
+    main()
