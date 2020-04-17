@@ -10,6 +10,7 @@ def main():
         print("Please enter a second argument for the name!")
         sys.exit()
 
+    functions.rename(desired_name)
 
 if __name__ == "__main__":
     main()
