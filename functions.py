@@ -19,3 +19,18 @@ def rename(desired_name):  # standard rename, does files in current directory
                     subdir, desired_name + " " + seasons + extensionType)
                 print(finalName)
                 os.rename(file_to_rename, finalName)
+
+def rename_season(desired_name, season): 
+    rootdir = os.getcwd()
+    for subdir, dirs, files in os.walk(rootdir):
+        for file in files:
+            file_to_rename = os.path.join(subdir, file)
+            extensionType = file[-4:]
+            print(file)
+            episodeNumber = [int(s) for s in file.split() if s.isdigit()]
+            print(episodeNumber)
+            episodeNumber = '{:02}'.format(episodeNumber[0])
+            finalName = os.path.join(
+                subdir, desired_name + " S" + season + "E" + episodeNumber + extensionType)
+            print(finalName)
+            os.rename(file_to_rename, finalName)

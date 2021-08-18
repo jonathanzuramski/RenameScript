@@ -3,13 +3,24 @@ import functions
 import sys
 
 def main():
+
+
     try:
-        desired_name = sys.argv[1]
+        if(len(sys.argv) > 1): 
+            desired_name = sys.argv[1]
+            season = sys.argv[2]
+        else: 
+            desired_name = sys.argv[1]
+            season = None
+        
     except:
         print("Please enter a second argument for the name!")
         sys.exit()
 
-    functions.rename(desired_name)
+    if(season == None):
+        functions.rename(desired_name)
+    else: 
+        functions.rename_season(desired_name, season)
 
 if __name__ == "__main__":
     main()
