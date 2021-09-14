@@ -1,26 +1,34 @@
-#!/usr/bin/python
+#!/usr/bin/python3.9
 import functions
-import sys
+import argparse
 
 def main():
+    parser = argparse.ArgumentParser(description="rename tv episodes")
+    parser.add_argument(
+        "name",
+        help="the name that each episode will be renamed to with the corresponding episode and season numbers"
+    )
+    parser.add_argument("--season", type=int, metavar="s", help="the season to be added")
+    args = parser.parse_args()
 
-
-    try:
-        if(len(sys.argv) > 1): 
-            desired_name = sys.argv[1]
-            season = sys.argv[2]
-        else: 
-            desired_name = sys.argv[1]
-            season = None
-        
-    except:
-        print("Please enter a second argument for the name!")
-        sys.exit()
-
-    if(season == None):
-        functions.rename(desired_name)
+    if(args.season): 
+        functions.rename_season(args.name, args.season)
     else: 
-        functions.rename_season(desired_name, season)
+        functions.rename(args.name)
+
+    # try:
+    #     if(len(sys.argv) > 2): 
+    #         desired_name = sys.argv[1]
+    #         season = sys.argv[2]
+    #         functions.rename_season(desired_name, season)
+    #     else: 
+    #         desired_name = sys.argv[1]
+    #         functions.rename(desired_name) 
+        
+    # except:
+    #     print("Please enter a second argument for the name!")
+    #     sys.exit()
+
 
 if __name__ == "__main__":
     main()
