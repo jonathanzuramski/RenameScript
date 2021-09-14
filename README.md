@@ -1,7 +1,7 @@
 # Rename 
 
 #### What does it do?
-Allows you to rename TV shows in two different ways aimed at making sure file names are inline with Plex's metadata db's
+Allows you to rename TV shows in two different ways aimed at making sure file names are inline with Plex's metadata db's.
 There are two ways to rename a set of files. 
 1. Renaming the show, but keeping season and episode information intact. (ie renaming a file in the format "tvshow S01E01.mkv" will still retain the "S01E01.mkv" 
 2. Or renaming the show and chaning the season and episode information. This is due to the format for some dvd or blueray rips being labeled cotinously with the episode number, but no information on the season. 
