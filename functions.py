@@ -4,7 +4,6 @@ from typing import final
 
 
 def rename(desired_name):  # standard rename, does files in current directory
-    print("rename")
     rootdir = os.getcwd()
     for subdir, _, files in os.walk(rootdir):
         for file in files:
@@ -21,7 +20,6 @@ def rename(desired_name):  # standard rename, does files in current directory
                 os.rename(file_to_rename, finalName)
 
 def rename_season(desired_name, season): 
-    # print("rename season")
     fileList = []
     rootdir = os.getcwd()
 
